@@ -102,4 +102,35 @@ $ python manage.py runserver --settings=core.settings
 # Lembrando que ao executar da primeira forma o servidor será executado em modo debug, ou seja, você poderá fazer breakpoints e debugar o código. E que a variável do DJANGO_SETTINGS_MODULE já está configurada no arquivo de configuração do Vscode.
 ```
 
+## Ferramentas usadas durante o desenvolvimento
+*Antes de iniciar um projeto, gosto de definir as ferramentas que vou usar, e abaixo está uma pequena descrição das ferramentas utilizadas.*
+### Docs
+
+*Exemplo de como adicionar as dependências docs ao projeto:*
+
+`poetry add --group doc mkdocs mkdocs-material mkdocstrings mkdocstrings-python`
+- [MkDocs Material](https://squidfunk.github.io/mkdocs-material/): Utilizado para gerar o tema da documentação.
+    - [MkDocstrings](https://mkdocstrings.github.io/): Utilizado para gerar a documentação dos módulos, classes e funções do projeto.
+    - [MkDocstrings-python](https://mkdocstrings.github.io/python/): Utilizado para gerar a documentação dos módulos, classes e funções do projeto.
+        
+        ### Exemplo de uso:
+        
+        | docs/some_page.md |
+        | --- |
+        ```
+        ::: package.module.class
+            options:
+                do_something: false
+        ```
+### Dev
+*Exemplo de como adicionar as dependências dev ao projeto:*
+
+`poetry add --group dev pytest pytest-cov blue isort pylint taskipy`
+- [Pytest](https://docs.pytest.org/en/7.2.x/): Utilizado para realizar os testes unitários.
+    - [Pytest-cov](https://pytest-cov.readthedocs.io/en/latest/): Utilizado para gerar o relatório de cobertura de testes.
+- [Blue](https://blue.readthedocs.io/en/latest/): Formatador de código.
+- [Isort](https://pycqa.github.io/isort/): Organizador de imports.
+- [Pylint](https://github.com/PyCQA/pylint): Linter de código.
+- [Taskipy](https://github.com/illBeRoy/taskipy): Utilizado para executar os scripts de forma mais simples.
+
 `Deixa o like e aguarde o próximo commit!`
